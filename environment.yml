@@ -6,4 +6,16 @@ dependencies:
   - aerobulk-python
   - pip
   - pip:
+      - python=3.11
       - pangeo-forge-esgf
+      - ecmwf_api_client==1.6.3
+      - einops==0.7.0
+      - lightning==2.0.9
+      - PyYAML==6.0.1
+      - timm==0.9.7
+      - torch==2.0.1
+      - torchvision==0.15.2
+      - torchist==0.2.1
+      - tensorboard==2.14.0
+      - tqdm==4.66.1
+      - climpred==2.4.0
