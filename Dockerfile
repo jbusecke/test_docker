@@ -1,5 +1,5 @@
 # Inherit from an upstream image
-FROM pangeo/pytorch-notebook:2024.07.30
+FROM pangeo/pytorch-notebook:2024.06.02
 
 # Install git and clone repository
 RUN git clone https://github.com/leap-stc/ChaosBench.git
