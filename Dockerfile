@@ -2,7 +2,6 @@
 FROM pangeo/pytorch-notebook:2024.07.30
 
 # Install git and clone repository
-RUN apt-get update && apt-get install -y git && apt-get clean
 RUN git clone https://github.com/leap-stc/ChaosBench.git
 
 # Install packages
