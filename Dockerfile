@@ -1,6 +1,11 @@
 # Inherit from an upstream image
-FROM pangeo/pangeo-notebook:2024.07.30
+FROM pangeo/pytorch-notebook:2024.07.30
 
+# Install git and clone repository
+RUN apt-get update && apt-get install -y git && apt-get clean
+RUN git clone https://github.com/leap-stc/ChaosBench.git
+
+# Install packages
 COPY environment.yml /tmp/environment.yml
 RUN mamba env update --prefix ${CONDA_DIR} --file /tmp/environment.yml
 
