@@ -1,17 +1,21 @@
 # Inherit from an upstream image
 FROM pangeo/pytorch-notebook:2024.06.02
 
-# Install git and clone repository
-RUN git clone https://github.com/leap-stc/ChaosBench.git
+USER root
+
+RUN apt-get update -qq --yes > /dev/null && \
+    apt-get install --yes -qq \
+        git \
+        vim \
+        tree \
+        groff > /dev/null
+
+USER ${NB_USER}
 
 # Install packages
-COPY environment.yml /tmp/environment.yml
-RUN mamba env update --prefix ${CONDA_DIR} --file /tmp/environment.yml
+COPY environment.yml /tmp/
+COPY requirements.txt /tmp/requirements.txt
+RUN mamba env update -p ${CONDA_DIR} -f /tmp/environment.yml && mamba clean -afy
+RUN pip install -r /tmp/requirements.txt
 
-# Register the base environment as the default kernel
-RUN conda run -n base pip install ipykernel
-RUN conda run -n base python -m ipykernel install --user --name base
-WORKDIR /home/jovyan/ChaosBench
-
-RUN echo "conda activate base" >> ~/.bashrc
 CMD ["bash"]

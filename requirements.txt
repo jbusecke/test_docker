@@ -1,0 +1,4 @@
+torchist
+tensorboard
+climpred
+lightning==2.0.9
