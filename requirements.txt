@@ -1,4 +1,1 @@
-torchist
-tensorboard
-climpred
-lightning==2.0.9
+git+https://github.com/sissa-data-science/DADApy
