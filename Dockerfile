@@ -16,6 +16,5 @@ USER ${NB_USER}
 COPY environment.yml /tmp/
 COPY requirements.txt /tmp/requirements.txt
 RUN mamba env update -p ${CONDA_DIR} -f /tmp/environment.yml && mamba clean -afy
-RUN pip install -r /tmp/requirements.txt
 
 CMD ["bash"]
