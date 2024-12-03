@@ -14,6 +14,5 @@ USER ${NB_USER}
 
 # Install packages
 COPY environment.yml /tmp/
-RUN mamba env update -p ${CONDA_DIR} -f /tmp/environment.yml && mamba clean -afy
-
+RUN mamba env update --prefix ${NB_PYTHON_PREFIX} --file /tmp/environment.yml && mamba clean -afy
 CMD ["bash"]
