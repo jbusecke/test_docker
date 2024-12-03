@@ -1,5 +1,5 @@
 # Inherit from an upstream image
-FROM pangeo/pytorch-notebook:2024.06.02
+FROM pangeo/pangeo-notebook:2024.10.01
 
 USER root
 
