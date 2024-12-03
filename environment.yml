@@ -3,8 +3,12 @@
 channels:
   - conda-forge
 dependencies:
-  - python=3.11
-  - aerobulk-python
+  - compilers
+  - c-compiler
+  - cxx-compiler
+  - scikit-learn
+  - "numpy<2.0"
   - pip
   - pip:
-      - pangeo-forge-esgf
+    - git+https://github.com/sissa-data-science/DADApy@v0.3.2
+    
