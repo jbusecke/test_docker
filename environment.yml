@@ -3,5 +3,10 @@
 channels:
   - conda-forge
 dependencies:
-  - python=3.11
   - compilers
+  - scikit-learn
+  - "numpy<2.0"
+  - pip
+  - pip:
+    - git+https://github.com/sissa-data-science/DADApy@v0.3.2
+    
